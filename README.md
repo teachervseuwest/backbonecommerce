@@ -1,6 +1,6 @@
 # Backbone E-Commerce
 
-Vielseitiges Backbone Shop System für Private oder Business.
+Vielseitiges Backbone Shop System für Private und Business.
 Solider Aufbau, verständliche Syntax und maximal skalierbar.
 
 # Features
