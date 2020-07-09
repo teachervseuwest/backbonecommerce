@@ -2,7 +2,9 @@ var Router = Backbone.Router.extend({
 	routes: {
 		'dashboard/': 'index',
 		'dashboard/items': 'items',
+		'dashboard/item': 'items',
 		'dashboard/orders': 'orders',
+		'dashboard/order': 'orders',
 	},
 	index: () => {
 		var site = new Index();

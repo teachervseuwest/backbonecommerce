@@ -74,6 +74,7 @@ var Item = Backbone.View.extend({
 		this.model.set('attributes', array);
 	},
 	send: function() {
+		console.log(this.model.get('image'));
 		Socket.emit('item.change', this.model.attributes);
 		var site = new Items();
 		new Site().el.append(site.el);

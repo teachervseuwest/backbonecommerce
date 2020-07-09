@@ -9,6 +9,7 @@ module.exports = (io) => {
 		_Traffic++;
 		socket.once('session', (data) => {
 			Users.session(data, (User) => {
+				if (User.get('dashboard') == true) require('./dashboard')(socket);
 				//-----User-----//
 				User.set('socket', socket.id);
 				socket.emit('user', User);
@@ -78,30 +79,6 @@ module.exports = (io) => {
 						});
 					});
 				});
-				//-----Dashboard-----//
-				if (User.get('dashboard') == true) {
-					socket.on('items.new', () => {
-						Items.new((Item) => {
-							socket.emit('items.new', Item);
-						});
-					});
-					socket.on('item.change', (data) => {
-						Items.update(data._id, data, (Item) => {});
-					});
-					socket.on('item.remove', (id) => {
-						Items.remove(id, (Item) => {});
-					});
-					socket.on('orders.get', () => {
-						Orders.get({finished: false}, (orders) => {
-							socket.emit('orders.get', orders)
-						});
-					});
-					socket.on('order.get', (id) => {
-						Orders.getFull(id, (order) => {
-							socket.emit('order.get', order);
-						});
-					});
-				}
 			});
 		});
 	});

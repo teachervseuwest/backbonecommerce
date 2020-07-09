@@ -26,6 +26,14 @@ button.new {
 	font-size: 20px;
 }
 
+button.red {
+	background: red;
+}
+
+button.green {
+	background: green;
+}
+
 button:hover {
 	box-shadow: inset 100px 100px rgba(255, 255, 255, 0.4);
 }
@@ -34,21 +42,13 @@ button:active {
 	box-shadow: inset 100px 100px rgba(155, 155, 155, 0.2);
 }
 
-button[inactive] {
+button[inactive], button#check[inactive] {
 	background: #555;
 	cursor: default;
 }
 
 button[inactive]:hover {
 	box-shadow: none;
-}
-
-button#remove {
-	background: red;
-}
-
-button#check {
-	background: green;
 }
 
 input, textarea, select {

@@ -14,10 +14,14 @@ script(type='text/template', id='order-template')
   include ../models/sidebar.jade
   div.content
     div#form
+      p Order ID: <%-_id%>
       p Stripe ID: <%-payment%>
       div.column
         <%for (let entry of shoppingcart) {%>
         p <%-entry.amount%>x <%-entry.item.name%>, <%-entry.item.price*entry.amount%>€
         <%}%>
-      button#check Check
-  
+      <%if (checked == false){%>
+      button.green#check Check
+      <%}else{%>
+      button.red#check Uncheck
+      <%}%>

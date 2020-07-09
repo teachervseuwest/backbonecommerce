@@ -22,3 +22,11 @@ this.new = (User, Cart, payment, callback) => {
 		return callback(Order);
 	});
 }
+
+this.check = (id) => {
+	DB.get({_id: id}, (order) => {
+		Order = order[0];
+		Order.set('checked', !Order.get('checked'));
+		Order.save();
+	});
+}

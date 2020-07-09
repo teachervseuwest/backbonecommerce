@@ -5,6 +5,7 @@ this.get = (by, callback) => {
 	Orders.find(by).
 	populate('user').
 	sort('checked').
+	sort('-date').
 	exec((err, result) => {
 		if (err) return console.error(err);
 		return callback(result);
@@ -29,7 +30,6 @@ this.new = (User, shoppingcart, payment, callback) => {
 	var order = new Orders({
 		user: User.get('_id'),
 		shoppingcart: shoppingcart,
-		payment: payment,
 	});
 	order.save((err, entry) => {
 		if (err) return console.error(err);

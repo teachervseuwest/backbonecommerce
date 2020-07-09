@@ -50,6 +50,7 @@ var Order = Backbone.View.extend({
 		return this;
 	},
 	events: {
+		'click button#check': 'check',
 	},
 	getOrder: function(callback) {
 		Socket.emit('order.get', this.model.get('_id'));
@@ -57,5 +58,10 @@ var Order = Backbone.View.extend({
 			var order = new OrderModel(data);
 			return callback(order);
 		});
+	},
+	check: function(e) {
+		if (e.target.getAttribute('inactive') == 'true') return;
+    e.target.setAttribute('inactive', true);
+		Socket.emit('order.check', this.model.get('_id'));
 	}
 });
