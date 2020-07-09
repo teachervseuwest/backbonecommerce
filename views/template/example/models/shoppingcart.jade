@@ -1,0 +1,10 @@
+script(type='text/template', id='model-shoppingcart-template')
+  img(src='/images/bottle1.png')
+  h3 <%-item.name%>
+  span.desc
+    li <%-item.attributes[0]%>
+    li <%-item.attributes[1]%>
+    li <%-item.attributes[2]%>
+  span.price <%-item.price%>€
+  input(type='number' value!='<%-amount%>' min='0')
+  i#remove(class='fa fa-trash')

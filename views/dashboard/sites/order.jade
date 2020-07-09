@@ -1,0 +1,23 @@
+script(type='text/template', id='orders-template')
+  include ../models/sidebar.jade
+  div.content
+    div#top
+      div.items
+        span Name
+        span Adress
+        span Date
+        span Check
+    div#orders
+  
+  
+script(type='text/template', id='order-template')
+  include ../models/sidebar.jade
+  div.content
+    div#form
+      p Stripe ID: <%-payment%>
+      div.column
+        <%for (let entry of shoppingcart) {%>
+        p <%-entry.amount%>x <%-entry.item.name%>, <%-entry.item.price*entry.amount%>€
+        <%}%>
+      button#check Check
+  

@@ -1,0 +1,41 @@
+script(type='text/template', id='items-template')
+  include ../models/sidebar.jade
+  div.content
+    div#top
+      div.items
+        span Name
+        span Info
+        span Price
+    div#items
+    a#new New Item
+    
+
+script(type='text/template', id='item-template')
+  include ../models/sidebar.jade
+  div.content
+    div#form
+      div.input
+        label Image
+        input#input(name='image' type='file' value!='<%-image%>')
+      div.input
+        label Name
+        input#input(name='name' value!='<%-name%>')
+      div.input
+        label Info 1
+        input#attr(name='attributes' value!='<%-attributes[0]%>')
+      div.input
+        label Info 2
+        input#attr(name='attributes' value!='<%-attributes[1]%>')
+      div.input
+        label Info 3
+        input#attr(name='attributes' value!='<%-attributes[2]%>')
+      div.input
+        label Text
+        textarea#attr(name='info' value!='<%-info%>')<%-info%>
+      div.input
+        label Price
+        input#input(name='price' type='number' value!='<%-price%>')
+      div.double
+        button#remove Remove
+        button#send Save
+  

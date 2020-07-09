@@ -1,0 +1,19 @@
+script(type='text/template', id='shop-template')
+  div#header
+    div#logo
+      img(src='/images/logo.png')
+    div#navi
+      i(class='fa fa-bars')
+    div.navi
+      a#toindex Startseite
+      a Herstellung
+      a#tocart Warenkorb
+        span  (
+        span#count <%-User.get('shoppingcart')%>
+        span )
+  div.content
+    h2 Produkte
+    div#bottles
+    button#tocart Zum Warenkorb
+  include ../models/footer.jade
+  

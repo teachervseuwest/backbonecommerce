@@ -1,0 +1,42 @@
+extends layout
+
+block content
+ script(type='text/javascript' src='/library/underscore.js')
+ script(type='text/javascript' src='/library/backbone.js')
+ script(type='text/javascript' src='/library/backbone.native.js')
+ script(type='text/javascript' src='/socket.io/socket.io.js')
+ script(type='text/javascript' src='https://js.stripe.com/v3/')
+
+ //-----models-----//
+ include ./models/item.jade
+ include ./models/shoppingcart.jade
+ 
+ //-----sites-----//
+ include ./sites/index.jade
+ include ./sites/shop.jade
+ include ./sites/cart.jade
+ include ./sites/item.jade
+ include ./sites/shipping.jade
+ include ./sites/checkout.jade
+ 
+ div#app
+   div.site
+
+ //-----models-----//
+ script(type='text/javascript' src='/javascripts/models.js')
+ script(type='text/javascript' src='/javascripts/collections.js')
+ 
+ //-----views-----//
+ script(type='text/javascript' src='/javascripts/views/items.js')
+ script(type='text/javascript' src='/javascripts/views/shoppingcart.js')
+   
+ //-----controller-----//
+ script(type='text/javascript' src='/javascripts/controller/site.js')
+ script(type='text/javascript' src='/javascripts/controller/index.js')
+ script(type='text/javascript' src='/javascripts/controller/shop.js')
+ script(type='text/javascript' src='/javascripts/controller/cart.js')
+ script(type='text/javascript' src='/javascripts/controller/item.js')
+ script(type='text/javascript' src='/javascripts/controller/shipping.js')
+ script(type='text/javascript' src='/javascripts/controller/checkout.js')
+   
+ script(type='text/javascript' src='/javascripts/routing.js')

@@ -1,0 +1,13 @@
+script(type='text/template', id='model-order-template')
+  <%var options = {year: 'numeric', month: 'numeric', day: 'numeric'};%>
+  div.column
+    ul <%-user.firstname%> <%-user.lastname%>
+    ul <%-user.email%>
+  div.list
+    ul <%-user.street%>
+    ul <%-user.zip%> <%-user.town%>
+    ul <%-user.country%>
+  ul <%-new Date(date).toLocaleString('de-DE', options)%>
+  <%if (checked == true) {%>
+  i.check(class='fa fa-check')
+  <%}%>
