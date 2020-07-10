@@ -43,10 +43,6 @@ app.use(static(path.join(__dirname, '..', _Config.public)));
 app.use(static(path.join(__dirname, '..', 'views')));
 routes(app);
 
-if ('development' == app.get('env')) {
-	app.use(errorhandler());
-}
-
 const options = {useNewUrlParser: true, useFindAndModify: false};
 mongoose.connect('mongodb://localhost:'+_Config.mongodb, options);
 var db = mongoose.connection;
