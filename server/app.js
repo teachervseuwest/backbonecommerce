@@ -68,6 +68,8 @@ db.once('open', () => {
 	httpsServer.listen(app.get('safeport'), () => {
 		console.log('Server listening on safe port '+app.get('safeport'));
 	});
-	var	io = socketio(httpServer);
+	var	io;
+	if (_Config.ssl == true) io = socketio(httpsServer);
+	else io = socketio(httpServer);
 	sockets(io);
 });
