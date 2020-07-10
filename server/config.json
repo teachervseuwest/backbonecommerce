@@ -4,8 +4,8 @@
 	"safeport": 443,
 	"mongodb": "27017/data",
 	"public": "public",
-	"sslkey": "/Users/worldboss/js/idqr/server/ssl/key.pem",
-	"sslcert": "/Users/worldboss/js/idqr/server/ssl/cert.pem",
+	"sslkey": "",
+	"sslcert": "",
 	"stripe_publickey": "",
 	"stripe_secretkey": ""
 }
