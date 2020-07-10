@@ -4,6 +4,7 @@
 	"safeport": 443,
 	"mongodb": "27017/data",
 	"public": "public",
+	"ssl": false,
 	"sslkey": "",
 	"sslcert": "",
 	"stripe_publickey": "",

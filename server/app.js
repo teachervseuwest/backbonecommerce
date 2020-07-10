@@ -30,10 +30,12 @@ app.set('view engine', 'jade');
 app.use(parser.json());
 app.use(parser.urlencoded({extended: true}));
 app.use(methodoverride());
-app.use ((req, res, next) => {
-	if (req.secure) return next();
-	else return res.redirect('https://' + req.headers.host + req.url);
-});
+if (_Config.ssl == true) {
+	app.use ((req, res, next) => {
+		if (req.secure) return next();
+		else return res.redirect('https://' + req.headers.host + req.url);
+	});
+}
 
 //statics
 app.use(favicon(path.join(__dirname, '..', _Config.public, 'images', 'favicon.ico')));
@@ -51,9 +53,12 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
 	process.stdout.write("\r\x1b[K");
+	var key, cert;
+	if (_Config.sslkey) key = fs.readFileSync(_Config.sslkey);
+	if (_Config.sslcert) cert = fs.readFileSync(_Config.sslcert)
 	const options = {
-		key  : fs.readFileSync(_Config.sslkey),
-		cert : fs.readFileSync(_Config.sslcert)
+		key  : key,
+		cert : cert
 	};
 	var httpServer = http.createServer(app);
 	var httpsServer = https.createServer(options, app);
@@ -63,6 +68,6 @@ db.once('open', () => {
 	httpsServer.listen(app.get('safeport'), () => {
 		console.log('Server listening on safe port '+app.get('safeport'));
 	});
-	var	io = socketio(httpsServer);
+	var	io = socketio(httpServer);
 	sockets(io);
 });
