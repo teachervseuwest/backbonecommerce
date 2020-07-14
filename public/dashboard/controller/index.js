@@ -23,17 +23,16 @@ var Index = Backbone.View.extend({
 	},
 	left: function() {
 		this.date = new Date(this.date.getFullYear(), this.date.getMonth()-1, 2);
-		this.chart.chart.data.datasets = [];
 		this.el.querySelector('#month').innerText = this.date.toLocaleString('en-US', this.options);
 		this.setChart(this.date);
 	},
 	right: function() {
 		this.date = new Date(this.date.getFullYear(), this.date.getMonth()+1, 2);
-		this.chart.chart.data.datasets = [];
 		this.el.querySelector('#month').innerText = this.date.toLocaleString('en-US', this.options);
 		this.setChart();
 	},
 	setChart: function(date) {
+		this.chart.chart.data.datasets = [];
 		this.chart.setAxes(this.date);
 		this.getUsers((data) => {
 			this.chart.update(data, {

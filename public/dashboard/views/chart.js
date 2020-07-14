@@ -22,6 +22,7 @@ var ChartView = Backbone.View.extend({
       }
   },
   initialize: function() {
+    this.render();
     this.chart = new Chart(this.el, this.settings);
     return this;
   },
