@@ -10,6 +10,20 @@ this.get = (by, callback) => {
 	});
 }
 
+this.getId = (date, callback) => {
+	var from = new Date(date);
+	var to = new Date(from.getFullYear(), from.getMonth()+1);
+	Users.find({
+		date: {$gt: from, $lt: to}
+	}).
+	select('date').
+	sort('-date').
+	exec((err, result) => {
+		if (err) return console.error(err);
+		return callback(result);
+	});
+}
+
 this.new = (callback) => {
 	var user = new Users();
 	user.save((err, entry) => {

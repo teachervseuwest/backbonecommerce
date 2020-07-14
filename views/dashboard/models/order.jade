@@ -7,7 +7,7 @@ script(type='text/template', id='model-order-template')
     ul <%-user.street%>
     ul <%-user.zip%> <%-user.town%>
     ul <%-user.country%>
-  ul <%-new Date(date).toLocaleString('de-DE', options)%>
+  ul <%-new Date(date).toLocaleString('en-US', options)%>
   <%if (checked == true) {%>
   i.check(class='fa fa-check')
   <%}%>

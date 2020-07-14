@@ -81,6 +81,11 @@ h2 {
 	font-size: 30px;
 }
 
+h3 {
+	display: grid;
+	margin-left: 20px;
+}
+
 a {
 	cursor: pointer;
 }
@@ -139,9 +144,28 @@ ul {
 	width: 100%;
 }
 
+#index {
+	display: grid;
+	margin: 0;
+}
+
 .content {
 	display: grid;
 	margin-left: 200px;
+}
+
+#graph {
+	display: grid;
+}
+
+#index .arrows {
+	display: grid;
+	width: 100px;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
+	margin-left: 20px;
+	font-size: 30px;
+	cursor: pointer;
 }
 
 .items {

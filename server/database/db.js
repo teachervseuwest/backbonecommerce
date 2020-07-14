@@ -14,6 +14,7 @@ var UserSchema = new Schema({
 	language: {type: String, default: 'en'},
 	ip: {type: Array, select: false},
 	useragent: {type: String, select: false},
+	date: {type: Date, default: Date.now},
 	dashboard: {type: Boolean, default: true},
 });
 mongoose.model('Users', UserSchema);

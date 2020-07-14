@@ -27,6 +27,14 @@
 	content: '\f00c';
 }
 
+.fa-left:before {
+	content: '\f0d9';
+}
+
+.fa-right:before {
+	content: '\f0da';
+}
+
 
 .fa-facebook:before {
 	content: '\f230';

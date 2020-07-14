@@ -34,3 +34,10 @@ this.new = (callback) => {
 		return callback(User);
 	});
 }
+
+this.graph = (date, callback) => {
+	if (!date) return;
+	DB.getId(date, (Orders) => {
+		return callback(Orders);
+	});
+}

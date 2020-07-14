@@ -1,4 +1,11 @@
 script(type='text/template', id='index-template')
+  <%var options = {month: 'long', year: 'numeric'};%>
   include ../models/sidebar.jade
+  div.content
+    h3#month <%-date.toLocaleString('en-US', options)%>
+    div.arrows
+      i#left(class='fa fa-left')
+      i#right(class='fa fa-right')
+    canvas#graph(width='200' height='70')
   
   

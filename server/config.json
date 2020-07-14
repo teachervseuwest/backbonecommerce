@@ -5,8 +5,8 @@
 	"mongodb": "27017/data",
 	"public": "public",
 	"ssl": false,
-	"sslkey": "",
-	"sslcert": "",
-	"stripe_publickey": "",
-	"stripe_secretkey": ""
+	"sslkey": "/Users/worldboss/js/idqr/server/ssl/key.pem",
+	"sslcert": "/Users/worldboss/js/idqr/server/ssl/cert.pem",
+	"stripe_publickey": "pk_test_51H1xlaJnYuv8nFzxMoYtaUmKRoaDyFiXtT9yCTvpz7hsq3CrGURSbFxATOLL5hcZFWDUmqB6TAbv8uNwuFVcv0Ug00IlQUzzus",
+	"stripe_secretkey": "sk_test_51H1xlaJnYuv8nFzxr4Ymh86TW9A2deGHukbg5AxWS2gSkvjHXoQM5lXZdTD73hPji0ao0stfeknz2bsX3DCSFQc900GgmHGnwZ"
 }

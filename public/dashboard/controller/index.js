@@ -1,34 +1,73 @@
 var Index = Backbone.View.extend({
 	id: 'index',
 	template: _.template(document.getElementById('index-template').innerHTML),
+	options: {month: 'long', year: 'numeric'},
+	date: new Date(new Date().getFullYear(), new Date().getMonth(), 2),
 	initialize: function() {
 		this.render();
-		this.getItems((items) => {
-			this.listenTo(User, 'change:shoppingcart', this.count);
-			new ItemsView({
-				el: this.el.querySelector('#bottles'),
-				collection: items,
-			});
+		this.chart = new ChartView({
+			el: this.el.querySelector('#graph'),
 		});
+		this.setChart(this.date);
 		return this;
 	},
 	render: function() {
 		this.el.innerHTML = '';
-		this.el.innerHTML = this.template();
+		this.el.innerHTML = this.template({date: this.date});
 		this.el.querySelector('#tostatistics').setAttribute('active', true);
 		return this;
 	},
 	events: {
+		'click i#left': 'left',
+		'click i#right': 'right',
 	},
-	getItems: function(callback) {
-		Socket.emit('items.get');
-		Socket.once('items.get', (data) => {
-			var items = new Backbone.Collection;
-			for (let i = 0; i < 3; i++) {
-				var model = new ItemModel(data[i]);
-				items.add(model);
-			}
-			return callback(items);
+	left: function() {
+		this.date = new Date(this.date.getFullYear(), this.date.getMonth()-1, 2);
+		this.chart.chart.data.datasets = [];
+		this.el.querySelector('#month').innerText = this.date.toLocaleString('en-US', this.options);
+		this.setChart(this.date);
+	},
+	right: function() {
+		this.date = new Date(this.date.getFullYear(), this.date.getMonth()+1, 2);
+		this.chart.chart.data.datasets = [];
+		this.el.querySelector('#month').innerText = this.date.toLocaleString('en-US', this.options);
+		this.setChart();
+	},
+	setChart: function(date) {
+		this.chart.setAxes(this.date);
+		this.getUsers((data) => {
+			this.chart.update(data, {
+				label: 'Users',
+				data: [],
+				backgroundColor: 'transparent',
+				borderColor: 'rgba(52, 161, 202, 1)',
+				pointBackgroundColor: 'rgba(52, 161, 202, 0.2)',
+				borderWidth: 2,
+				lineTension: 0,
+			});
+		});
+		this.getOrders((data) => {
+			this.chart.update(data, {
+				label: 'Orders',
+				data: [],
+				backgroundColor: 'transparent',
+				borderColor: 'rgba(202, 61, 61, 1)',
+				pointBackgroundColor: 'rgba(202, 61, 61, 0.2)',
+				borderWidth: 2,
+				lineTension: 0,
+			});
+		});
+	},
+	getUsers: function(callback) {
+		Socket.emit('graph.users', this.date);
+		Socket.once('graph.users', (data) => {
+			return callback(data);
+		});
+	},
+	getOrders: function(callback) {
+		Socket.emit('graph.orders', this.date);
+		Socket.once('graph.orders', (data) => {
+			return callback(data);
 		});
 	},
 });
