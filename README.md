@@ -17,7 +17,7 @@ Um flexibel und ansprechend für verschiedene Einsatzzwecke zu sein wird ein Tem
 
 Dashboard:
 
-Ein Dashboard wird bereit gestellt um Angebote und Bestellungen übersichtlich zu gestalten. Dabei wird Graph.js für die visualisierung genutzt.
+Ein Dashboard wird bereit gestellt um Angebote und Bestellungen übersichtlich zu gestalten. Dabei wird Graph.js für die Visualisierung benutzt.
 
 # Dependencies:
 
