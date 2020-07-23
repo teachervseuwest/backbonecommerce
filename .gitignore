@@ -1,4 +1,4 @@
 
 *.json
 server/config.json
-views/example
+views/example/
