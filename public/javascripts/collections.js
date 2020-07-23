@@ -3,7 +3,7 @@ var ShoppingcartCollection = Backbone.Collection.extend({
 	total: function(){
 		var total = 0;
 		this.each((model) => {
-			total += parseInt(model.get('amount'))*parseInt(model.get('item').price);
+			total += Number(model.get('amount'))*Number(model.get('item').price);
 		});
 		return total;
 	},

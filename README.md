@@ -28,6 +28,14 @@ Module:
 
 ![ScreenShot](https://cdn.discordapp.com/attachments/732593192729575454/735804430108065823/Bildschirmfoto_2020-07-23_um_12.23.09.png)
 
+![ScreenShot](https://cdn.discordapp.com/attachments/732593192729575454/735867236010557460/Bildschirmfoto_2020-07-23_um_16.26.43.png)
+
+![ScreenShot](https://cdn.discordapp.com/attachments/732593192729575454/735867276548505640/Bildschirmfoto_2020-07-23_um_16.26.05.png)
+
+![ScreenShot](https://cdn.discordapp.com/attachments/732593192729575454/735867306634117220/Bildschirmfoto_2020-07-23_um_16.27.51.png)
+
+![ScreenShot](https://cdn.discordapp.com/attachments/732593192729575454/735867330835382282/Bildschirmfoto_2020-07-23_um_16.32.31.png)
+
 # Dashboard
 
 ![ScreenShot](https://cdn.discordapp.com/attachments/732593192729575454/732593586792562698/Bildschirmfoto_2020-07-14_um_15.41.36.png)

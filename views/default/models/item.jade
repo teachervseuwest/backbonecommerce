@@ -3,7 +3,13 @@ script(type='text/template', id='model-item-template')
   div.box
     h3 <%-name%>
     div.list
+      <% if(attributes[0]){%>
       li <%-attributes[0]%>
+      <%}%>
+      <% if(attributes[1]){%>
       li <%-attributes[1]%>
+      <%}%>
+      <% if(attributes[2]){%>
       li <%-attributes[2]%>
+      <%}%>
     button in den Warenkorb
