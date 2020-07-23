@@ -16,7 +16,7 @@ script(type='text/template', id='item-template')
     div#form
       div.input
         label Image
-        input#input(name='image' type='file' value!='<%-image%>')
+        input#image(name='image' type='file' value!='<%-image%>')
       div.input
         label Name
         input#input(name='name' value!='<%-name%>')
@@ -31,7 +31,7 @@ script(type='text/template', id='item-template')
         input#attr(name='attributes' value!='<%-attributes[2]%>')
       div.input
         label Text
-        textarea#attr(name='info' value!='<%-info%>')<%-info%>
+        textarea#input(name='info' value!='<%-info%>')<%-info%>
       div.input
         label Price
         input#input(name='price' type='number' value!='<%-price%>')

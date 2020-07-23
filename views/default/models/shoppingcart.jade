@@ -1,5 +1,5 @@
 script(type='text/template', id='model-shoppingcart-template')
-  img(src='/images/bottle1.png')
+  img(src!='<%-item.image%>')
   h3 <%-item.name%>
   span.desc
     li <%-item.attributes[0]%>

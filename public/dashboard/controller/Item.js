@@ -58,11 +58,20 @@ var Item = Backbone.View.extend({
 		return this;
 	},
 	events: {
+		'change input#image': 'image',
 		'change input#input': 'input',
 		'change textarea#input': 'input',
 		'change input#attr': 'attr',
 		'click button#send': 'send',
 		'click button#remove': 'delete',
+	},
+	image: function(e) {
+		var fReader = new FileReader();
+		var file = e.target.files[0];
+		fReader.readAsDataURL(file);
+		fReader.onload = (event) => {
+			this.model.set('image', event.target.result);
+		}
 	},
 	input: function(e) {
 		this.model.set(e.target.name, e.target.value);
@@ -74,7 +83,6 @@ var Item = Backbone.View.extend({
 		this.model.set('attributes', array);
 	},
 	send: function() {
-		console.log(this.model.get('image'));
 		Socket.emit('item.change', this.model.attributes);
 		var site = new Items();
 		new Site().el.append(site.el);
