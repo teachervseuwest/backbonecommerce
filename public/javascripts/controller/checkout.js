@@ -65,7 +65,6 @@ var Checkout = Backbone.View.extend({
 	  this.Stripe.confirmCardPayment(this.stripe.clientSecret, {
 	    payment_method: {
 	      card: this.card,
-	      //billing_details: {this.model.attributes},
 	    }
 	  }).then((result) => {
 			e.target.removeAttribute('inactive');
@@ -73,7 +72,8 @@ var Checkout = Backbone.View.extend({
 	    if (result.paymentIntent.status === 'succeeded') {
 				Socket.emit('payment.submit');
 				User.set('shoppingcart', 0);
-				Backbone.history.navigate('thanks', true);
+				Backbone.history.navigate('', true);
+				alert('Vielen Dank für Ihren Einkauf');
 			}
 	  });
 	},
