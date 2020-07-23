@@ -94,6 +94,11 @@ ul {
 	margin: 0;
 }
 
+.input {
+	display: grid;
+	width: 400px;
+}
+
 .double {
 	display: grid;
 	grid-template-columns: 1fr 1fr;

@@ -14,7 +14,7 @@ var Index = Backbone.View.extend({
 	render: function() {
 		this.el.innerHTML = '';
 		this.el.innerHTML = this.template({date: this.date});
-		this.el.querySelector('#tostatistics').setAttribute('active', true);
+		this.el.querySelector('#todashboard').setAttribute('active', true);
 		return this;
 	},
 	events: {
@@ -36,7 +36,7 @@ var Index = Backbone.View.extend({
 		this.chart.setAxes(this.date);
 		this.getUsers((data) => {
 			this.chart.update(data, {
-				label: 'Users',
+				label: 'New users',
 				data: [],
 				backgroundColor: 'transparent',
 				borderColor: 'rgba(52, 161, 202, 1)',
