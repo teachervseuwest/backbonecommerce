@@ -8,9 +8,16 @@ Solider Aufbau, verständliche Syntax und maximal skalierbar.
 I/O Single Page Applikation:
 
 Clientseiting wird das Backbone.js Rendering System genutzt. Die Kommunikation zwischen Client und Server erfolgt per Socket.io - Daten werden vom Client über die Funktion Socket.* angefordert, vom Server verarbeitet und ggf. als Callback zurückgeschickt.
-Um maximale Performance zu erreichen wird ein Input vorab vom Client realisiert, bevor er vom Server verarbeitet wird.
 
-Als HTML Template Engine wird auf Jade gesetzt!
+
+Template System:
+
+Um flexibel und ansprechend für verschiedene Einsatzzwecke zu sein wird ein Template System bereit gestellt. Die Templates können mit Grundkenntnissen in HTML und CSS erstellt oder bearbeitet werden.
+
+
+Dashboard:
+
+Ein Dashboard wird bereit gestellt um Angebote und Bestellungen übersichtlich zu gestalten. Dabei wird Graph.js für die visualisierung genutzt.
 
 # Dependencies:
 
