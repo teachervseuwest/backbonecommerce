@@ -1,4 +1,4 @@
-# Plain JS E-Commerce
+# Backbone E-Commerce
 
 Vielseitiges Backbone Shop System für Private und Business.
 Solider Aufbau, verständliche Syntax und maximal skalierbar.
