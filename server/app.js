@@ -38,9 +38,9 @@ if (_Config.ssl == true) {
 }
 
 //statics
-app.use(favicon(path.join(__dirname, '..', _Config.public, 'images', 'favicon.ico')));
-app.use(static(path.join(__dirname, '..', _Config.public)));
-app.use(static(path.join(__dirname, '..', 'views')));
+app.use(favicon(path.join(__dirname, '..', 'views', _Config.template, 'images', 'favicon.ico')));
+app.use(static(path.join(__dirname, '..', 'views', _Config.template)));
+app.use(static(path.join(__dirname, '..', 'public')));
 routes(app);
 
 const options = {useNewUrlParser: true, useFindAndModify: false};

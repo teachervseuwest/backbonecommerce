@@ -41,6 +41,7 @@ var OrderSchema = new Schema({
 	user: {type: Schema.Types.ObjectId, ref: 'Users'},
 	shoppingcart: [{type: Schema.Types.ObjectId, ref: 'Shoppingcart'}],
 	payment: String,
+	value: Number,
 	checked: {type: Boolean, default: false},
 	finished: {type: Boolean, default: false},
 	date: {type: Date, default: Date.now},

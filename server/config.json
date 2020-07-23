@@ -3,7 +3,7 @@
 	"port": 80,
 	"safeport": 443,
 	"mongodb": "27017/data",
-	"public": "public",
+	"template": "default",
 	"ssl": false,
 	"sslkey": "/Users/worldboss/js/idqr/server/ssl/key.pem",
 	"sslcert": "/Users/worldboss/js/idqr/server/ssl/cert.pem",

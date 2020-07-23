@@ -17,9 +17,18 @@ script(type='text/template', id='order-template')
       p Order ID: <%-_id%>
       p Stripe ID: <%-payment%>
       div.column
+        hr
+        <%var value = 0%>
         <%for (let entry of shoppingcart) {%>
-        p <%-entry.amount%>x <%-entry.item.name%>, <%-entry.item.price*entry.amount%>€
+        <%value += entry.item.price*entry.amount%>
+        div.double
+          p <%-entry.amount%>x <%-entry.item.name%>,
+          p <%-entry.item.price*entry.amount%>€
         <%}%>
+        hr
+        div.double
+          p Gesamt:
+          p <%-value%>€
       <%if (checked == false){%>
       button.green#check Check
       <%}else{%>

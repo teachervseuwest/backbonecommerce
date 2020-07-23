@@ -5,6 +5,7 @@ var Router = Backbone.Router.extend({
 		'dashboard/item': 'items',
 		'dashboard/orders': 'orders',
 		'dashboard/order': 'orders',
+		'dashboard/comments': 'comments',
 	},
 	index: () => {
 		var site = new Index();
@@ -16,6 +17,10 @@ var Router = Backbone.Router.extend({
 	},
 	orders: () => {
 		var site = new Orders();
+		new Site().el.append(site.el);
+	},
+	comments: () => {
+		var site = new Comments();
 		new Site().el.append(site.el);
 	},
 });

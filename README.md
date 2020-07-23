@@ -7,10 +7,8 @@ Solider Aufbau, verständliche Syntax und maximal skalierbar.
 
 I/O Single Page Applikation:
 
-Clientseiting wird das Backbone.js Rendering System genutzt. Die Kommunikation zwischen Client und Server erfolgt per Socket.io - Daten werden vom Client über die Funktion Sockets.* angefordert ('javascripts/sockets/outgoing.js'), vom Server verarbeitet und als Callback zurückgegeben ('javascripts/sockets/incoming.js').
+Clientseiting wird das Backbone.js Rendering System genutzt. Die Kommunikation zwischen Client und Server erfolgt per Socket.io - Daten werden vom Client über die Funktion Socket.* angefordert, vom Server verarbeitet und ggf. als Callback zurückgeschickt.
 Um maximale Performance zu erreichen wird ein Input vorab vom Client realisiert, bevor er vom Server verarbeitet wird.
-
-Das Routing wird ebenfalls über Backbone.js realisiert. Um eine neue Route zu erstellen muss diese zunächst für den Client ('public/javascripts/routing/routing.js') als auch für den Server ('server/routes/index.js') hinzugefügt werden.
 
 Als HTML Template Engine wird auf Jade gesetzt!
 
@@ -21,16 +19,18 @@ Programme:
 - MongoDB
 
 Module:
-- express
-- mongoose
-- socket.io
-- jade
+- Express
+- Mongoose
+- Socket.io
+- Jade
 
+# Example
 
+![ScreenShot](https://cdn.discordapp.com/attachments/732593192729575454/735804430108065823/Bildschirmfoto_2020-07-23_um_12.23.09.png)
 
-# Status
+# Dashboard
 
-Very Early Stage:
-- Startseite provisorisch gestaltet
-- Produkte können hinzugefügt werden 
-- Produkte werden angezeigt
+![ScreenShot](https://cdn.discordapp.com/attachments/732593192729575454/732593586792562698/Bildschirmfoto_2020-07-14_um_15.41.36.png)
+
+# Discord Server
+https://discord.gg/d2QhkVn
