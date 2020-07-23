@@ -7,7 +7,7 @@ Solider Aufbau, verständliche Syntax und maximal skalierbar.
 
 I/O Single Page Applikation:
 
-Clientseiting wird das Backbone.js Rendering System genutzt. Die Kommunikation zwischen Client und Server erfolgt per Socket.io - Daten werden vom Client über die Funktion Socket.* angefordert, vom Server verarbeitet und ggf. als Callback zurückgeschickt.
+Clientseitig wird das Backbone.js Rendering System genutzt. Die Kommunikation zwischen Client und Server erfolgt per Socket.io - Daten werden vom Client angefordert, vom Server verarbeitet und in Echtzeit zurückgeschickt.
 
 
 Template System:
