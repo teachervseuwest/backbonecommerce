@@ -9,7 +9,11 @@ module.exports = (io) => {
 		_Traffic++;
 		socket.once('session', (data) => {
 			Users.session(data, (User) => {
-				if (User.get('dashboard') == true) require('./dashboard')(socket);
+				socket.on('dashboard', (data) => {
+					if (!Users.dashboard(data)) return socket.emit('dashboard', false);
+					require('./dashboard')(socket);
+					return socket.emit('dashboard', true);
+				});
 				//-----User-----//
 				User.set('socket', socket.id);
 				socket.emit('user', User);

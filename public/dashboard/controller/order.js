@@ -20,8 +20,8 @@ var Orders = Backbone.View.extend({
 	events: {
 	},
 	getOrders: function(callback) {
-		Socket.emit('orders.get');
-		Socket.once('orders.get', (data) => {
+		Socket.emit('d.orders.get');
+		Socket.once('d.orders.get', (data) => {
 			var orders = new Backbone.Collection;
 			for (let entry of data) {
 				var model = new OrderModel(entry);
@@ -53,8 +53,8 @@ var Order = Backbone.View.extend({
 		'click button#check': 'check',
 	},
 	getOrder: function(callback) {
-		Socket.emit('order.get', this.model.get('_id'));
-		Socket.once('order.get', (data) => {
+		Socket.emit('d.order.get', this.model.get('_id'));
+		Socket.once('d.order.get', (data) => {
 			var order = new OrderModel(data);
 			return callback(order);
 		});
@@ -62,6 +62,6 @@ var Order = Backbone.View.extend({
 	check: function(e) {
 		if (e.target.getAttribute('inactive') == 'true') return;
     e.target.setAttribute('inactive', true);
-		Socket.emit('order.check', this.model.get('_id'));
+		Socket.emit('d.order.check', this.model.get('_id'));
 	}
 });

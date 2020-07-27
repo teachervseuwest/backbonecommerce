@@ -6,40 +6,45 @@ var Stripe = require('./stripe');
 
 module.exports = (socket) => {
 	//-----Graph-----//
-	socket.on('graph.users', (date) => {
+	socket.on('d.graph.users', (date) => {
 		Users.graph(date, (data) => {
-			socket.emit('graph.users', data);
+			socket.emit('d.graph.users', data);
 		});
 	});
-	socket.on('graph.orders', (date) => {
+	socket.on('d.graph.orders', (date) => {
 		Orders.graph(date, (data) => {
-			socket.emit('graph.orders', data);
+			socket.emit('d.graph.orders', data);
 		});
 	});
 	//-----Items-----//
-	socket.on('items.new', () => {
-		Items.new((Item) => {
-			socket.emit('items.new', Item);
+	socket.on('d.items.get', () => {
+		Items.get({}, (data) => {
+			socket.emit('d.items.get', data);
 		});
 	});
-	socket.on('item.change', (data) => {
+	socket.on('d.items.new', () => {
+		Items.new((Item) => {
+			socket.emit('d.items.new', Item);
+		});
+	});
+	socket.on('d.item.change', (data) => {
 		Items.update(data._id, data, (Item) => {});
 	});
-	socket.on('item.remove', (id) => {
+	socket.on('d.item.remove', (id) => {
 		Items.remove(id, (Item) => {});
 	});
 	//-----Orders-----//
-	socket.on('orders.get', () => {
+	socket.on('d.orders.get', () => {
 		Orders.get({finished: false}, (orders) => {
-			socket.emit('orders.get', orders)
+			socket.emit('d.orders.get', orders)
 		});
 	});
-	socket.on('order.get', (id) => {
+	socket.on('d.order.get', (id) => {
 		Orders.getFull(id, (order) => {
-			socket.emit('order.get', order);
+			socket.emit('d.order.get', order);
 		});
 	});
-	socket.on('order.check', (id) => {
+	socket.on('d.order.check', (id) => {
 		Orders.check(id);
 	});
 };

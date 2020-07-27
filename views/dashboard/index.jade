@@ -12,6 +12,7 @@ block content
  include ./models/order.jade
  
  //-----sites-----//
+ include ./sites/login.jade
  include ./sites/index.jade
  include ./sites/item.jade
  include ./sites/order.jade
@@ -32,6 +33,7 @@ block content
  
  //-----controller-----//
  script(type='text/javascript' src='/dashboard/controller/site.js')
+ script(type='text/javascript' src='/dashboard/controller/login.js')
  script(type='text/javascript' src='/dashboard/controller/index.js')
  script(type='text/javascript' src='/dashboard/controller/item.js')
  script(type='text/javascript' src='/dashboard/controller/order.js')

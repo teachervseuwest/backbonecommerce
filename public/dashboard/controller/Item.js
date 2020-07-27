@@ -21,8 +21,8 @@ var Items = Backbone.View.extend({
 		'click a#new': 'new',
 	},
 	getItems: function(callback) {
-		Socket.emit('items.get');
-		Socket.once('items.get', (data) => {
+		Socket.emit('d.items.get');
+		Socket.once('d.items.get', (data) => {
 			var items = new Backbone.Collection;
 			for (let entry of data) {
 				var model = new ItemModel(entry);
@@ -32,8 +32,8 @@ var Items = Backbone.View.extend({
 		});
 	},
 	new: function() {
-		Socket.emit('items.new');
-		Socket.once('items.new', (data) => {
+		Socket.emit('d.items.new');
+		Socket.once('d.items.new', (data) => {
 			var model = new ItemModel(data);
 			var site = new Item({
 				model: model,
@@ -83,13 +83,13 @@ var Item = Backbone.View.extend({
 		this.model.set('attributes', array);
 	},
 	send: function() {
-		Socket.emit('item.change', this.model.attributes);
+		Socket.emit('d.item.change', this.model.attributes);
 		var site = new Items();
 		new Site().el.append(site.el);
 	},
 	delete: function() {
 		if (!confirm('Do you want to delete this?')) return;
-		Socket.emit('item.remove', this.model.get('_id'));
+		Socket.emit('d.item.remove', this.model.get('_id'));
 		var site = new Items();
 		new Site().el.append(site.el);
 	}

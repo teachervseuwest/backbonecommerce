@@ -58,14 +58,14 @@ var Index = Backbone.View.extend({
 		});
 	},
 	getUsers: function(callback) {
-		Socket.emit('graph.users', this.date);
-		Socket.once('graph.users', (data) => {
+		Socket.emit('d.graph.users', this.date);
+		Socket.once('d.graph.users', (data) => {
 			return callback(data);
 		});
 	},
 	getOrders: function(callback) {
-		Socket.emit('graph.orders', this.date);
-		Socket.once('graph.orders', (data) => {
+		Socket.emit('d.graph.orders', this.date);
+		Socket.once('d.graph.orders', (data) => {
 			return callback(data);
 		});
 	},

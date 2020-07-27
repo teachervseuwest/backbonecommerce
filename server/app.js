@@ -1,4 +1,4 @@
-_Config = require('./config.json');
+_Config = require('../config.json');
 _Traffic = 0;
 
 const fs = require('fs');
@@ -43,7 +43,7 @@ app.use(static(path.join(__dirname, '..', 'views', _Config.template)));
 app.use(static(path.join(__dirname, '..', 'public')));
 routes(app);
 
-const options = {useNewUrlParser: true, useFindAndModify: false};
+const options = {useNewUrlParser: true};
 mongoose.connect('mongodb://localhost:'+_Config.mongodb, options);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

@@ -148,14 +148,20 @@ ul {
 	width: 100%;
 }
 
-#index {
-	display: grid;
-	margin: 0;
-}
-
 .content {
 	display: grid;
 	margin-left: 200px;
+}
+
+#login .content {
+	margin: auto;
+	margin-top: 40px;
+	max-width: 400px;
+	grid-gap: 10px;
+}
+
+#err {
+	color: red;
 }
 
 #graph {

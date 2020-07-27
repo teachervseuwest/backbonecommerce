@@ -35,6 +35,13 @@ this.new = (callback) => {
 	});
 }
 
+this.dashboard = (data) => {
+	if (!data) return null;
+	if (data.user != _Config.dashboard_user) return null;
+	if (data.pass != _Config.dashboard_pass) return null;
+	return true;
+}
+
 this.graph = (date, callback) => {
 	if (!date) return;
 	DB.getId(date, (Orders) => {
