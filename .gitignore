@@ -1,2 +1,4 @@
 
 views/example/
+config.json
+*.DS_Store
