@@ -1,0 +1,14 @@
+{
+	"url": "https://localhost",
+	"port": 80,
+	"safeport": 443,
+	"mongodb": "27017/data",
+	"template": "default",
+	"dashboard_user": "admin",
+	"dashboard_pass": "",
+	"ssl": false,
+	"sslkey": "",
+	"sslcert": "",
+	"stripe_publickey": "",
+	"stripe_secretkey": ""
+}
