@@ -3,6 +3,9 @@
 Vielseitiges Backbone Shop System für Private und Business.
 Solider Aufbau, verständliche Syntax und maximal skalierbar.
 
+Mit Backbone E-Commerce stelle ich dir eine Komplettlösung für deinen Onlinehandel zur Verfügung.
+Besonders richtet sich mein System an alle Bastler und Selbermacher da draußen.
+
 # Features
 
 I/O Single Page Applikation:
@@ -12,7 +15,8 @@ Clientseitig wird das Backbone.js Rendering System genutzt. Die Kommunikation zw
 
 Template System:
 
-Um flexibel und ansprechend für verschiedene Einsatzzwecke zu sein wird ein Template System bereit gestellt. Die Templates können mit Grundkenntnissen in HTML und CSS erstellt oder bearbeitet werden.
+Ein Template System bietet dir eine Out of the Box Lösung mit der du in weniger als 10 Minuten deinen eigenen Webshop realisieren kannst.
+Um flexibel und ansprechend für verschiedene Einsatzzwecke zu sein können Templates mit Grundkenntnissen in HTML und CSS erstellt oder bearbeitet werden.
 
 
 Dashboard:
