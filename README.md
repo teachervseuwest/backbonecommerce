@@ -1,23 +1,25 @@
 # Backbone E-Commerce
 
-Vielseitiges Backbone Shop System für Private und Business.
+Vielseitiges und skalierbares Backbone Shop System für Business.
 Solider Aufbau, verständliche Syntax und maximal skalierbar.
 
-# Features
+# Aufbau
 
 I/O Single Page Applikation:
 
 Clientseitig wird das Backbone.js Rendering System genutzt. Die Kommunikation zwischen Client und Server erfolgt per Socket.io - Daten werden vom Client angefordert, vom Server verarbeitet und in Echtzeit zurückgeschickt.
 
 
-Template System:
+Visual Template System:
 
-Um flexibel und ansprechend für verschiedene Einsatzzwecke zu sein wird ein Template System bereit gestellt. Die Templates können mit Grundkenntnissen in HTML und CSS erstellt oder bearbeitet werden.
+Um flexibel und ansprechend für verschiedene Einsatzzwecke zu sein wird ein Visual Template System bereit gestellt.
+Visuelle Templates sind in Jade(HTML) und CSS grid geschrieben und können per Drag and Drop geändert werden.
 
-
-Dashboard:
-
-Ein Dashboard wird bereit gestellt um Angebote und Bestellungen übersichtlich zu gestalten. Dabei wird Graph.js für die Visualisierung benutzt.
+Das Template wird mit folgenden Features unterstützt:
+- Zahlungsabwicklung
+- Warenkorb System
+- Dashboard
+- Monitoring
 
 # Dependencies:
 
